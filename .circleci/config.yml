@@ -30,7 +30,7 @@ jobs:
       - run: sudo npm i -g bower
       - run: bower install
 
-       - run:
+      - run:
           name: Install phantomjs
           command: |
             if ! [ $(which phantomjs) ]; then
