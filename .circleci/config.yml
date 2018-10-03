@@ -29,15 +29,8 @@ jobs:
       - run: yarn install
       - run: sudo npm i -g bower
       - run: bower install
-
-      - run:
-          name: Install phantomjs
-          command: |
-            if ! [ $(which phantomjs) ]; then
-              sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
-            fi
-
-          sudo chmod ugo+x /usr/local/bin/phantomjs
+      - run: sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+      - run: sudo chmod ugo+x /usr/local/bin/phantomjs
 
       - save_cache:
           paths:
